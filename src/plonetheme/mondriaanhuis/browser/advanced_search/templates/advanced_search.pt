@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  lang="en"
+  metal:use-macro="context/main_template/macros/master"
+  i18n:domain="plone">
+
+  <head>
+    <metal:block metal:fill-slot="head_slot">
+
+      <link rel="alternate" title="RSS 1.0" type="application/rss+xml"
+        tal:define="here_url context/@@plone_context_state/object_url;"
+        tal:condition="request/SearchableText|nothing"
+        tal:attributes="href string:$here_url/search_rss?${request/QUERY_STRING}"/>
+
+      <link rel="home" title="Home" tal:attributes="href view/navroot_url" />
+
+    </metal:block>
+
+    <metal:block fill-slot="top_slot"
+       tal:define="dummy python:request.set('disable_border',1);
+       disable_column_one python:request.set('disable_plone.leftcolumn',1);
+       disable_column_two python:request.set('disable_plone.rightcolumn',1);" />
+  </head>
+
+  <body>
+
+    <div id="content-core" metal:fill-slot="main">
+
+      <form name="searchform"
+        action="@@search"
+        class="form-horizontal"
+        id="advanced_search_form"
+        tal:attributes="action python: '/%s/@@search' %(getattr(context, 'language', 'nl'))"
+        tal:define="portal context/@@plone_portal_state/portal;
+          first_call not:request/advanced_search|nothing;
+          st python:request.get('SearchableText', '');
+          lang python: getattr(context, 'language', 'en');
+          input_placeholder python: 'Type om te zoeken' if lang == 'nl' else 'Type to search';
+          advanced_fields python: view.getAdvancedFields();
+          ">
+
+          <div id="search-page-header">
+            <h1 class="documentFirstHeading" i18n:translate="label_advanced_search">Advanced search</h1>
+              
+              <input class="main-search form-control search-input"
+               name="SearchableText"
+               type="text"
+               size="25"
+               id="search_input"
+               title="Search Site"
+               placeholder="Search site"
+               tal:attributes="value st"
+               i18n:attributes="title title_search_title; placeholder title_search_title"
+               />
+               
+          </div>
+
+          <div class="input-wrapper container-fluid no-padding" i18n:domain="plonetheme.mondriaanhuis" id="advanced-search-wrapper">
+            <tal:extra_fields tal:repeat="field advanced_fields">
+              <tal:field 
+                tal:define="field_label python:field['name'];
+                            is_widget python:field['is_widget'];
+                            select2_data python: field['select2_data'];">
+
+                  <div class="form-group field">
+                    <label class="col-sm-3 control-label" i18n:translate="" tal:attributes="for field_label;" tal:content="field_label">Title</label>
+                    <div class="col-sm-9">
+
+                      <tal:notwidget tal:condition="not:is_widget">
+                        <input type="text" class="form-control" placeholder=""
+                        i18n:attributes="placeholder"
+                        tal:attributes="name field_label; id field_label; value python: request.get(field_label, '')"
+                        >
+                      </tal:notwidget>
+                      
+                      <tal:iswidget tal:condition="is_widget">
+                        <input class="pat-select2 select2-offscreen" type="text" name="" value="" data-pat-select2="" tabindex="-1"
+                          tal:attributes="name field_label; id field_label; value python: request.get(field_label, ''); data-pat-select2 select2_data" placeholder="type_to_search" i18n:attributes="placeholder type_to_search;">
+                      </tal:iswidget>
+
+                    </div>
+                  </div>
+              </tal:field>
+            </tal:extra_fields>
+
+            <div class="col-sm-12 no-padding search-btn-wrapper" i18n:domain="plone">
+              <input class="searchPage searchButton btn btn-default search-btn"
+                            type="submit"
+                            value="Search"
+                            i18n:attributes="value label_search;"/>
+            </div>
+            </div>
+       
+
+      </form>
+    </div>
+  </body>
+</html>

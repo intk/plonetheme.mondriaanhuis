@@ -1,0 +1,49 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="plonetheme.mondriaanhuis">
+
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot
+      directory="overrides"
+      layer="plonetheme.mondriaanhuis.interfaces.IPlonethemeModernBaseLayer"
+      />
+
+  <!-- Publish static files -->
+  <browser:resourceDirectory
+      name="plonetheme.mondriaanhuis"
+      directory="static"
+      />
+
+  <browser:page
+        name="online_experience_view"
+        for="*"
+        template="templates/online_experience.pt"
+        class=".views.OnlineExperienceView"
+        permission="zope2.View"
+        />
+
+  <browser:menuItem
+        for="*"
+        menu="plone_displayviews"
+        title="Online experience view"
+        action="@@online_experience_view"
+        description="Shows the online experience view"
+        />
+
+  <browser:page
+        name="advancedsearch"
+        class=".advanced_search.views.AdvancedSearchView"
+        permission="zope2.View"
+        for="*"
+        template="advanced_search/templates/advanced_search.pt"
+    />
+
+  <subscriber
+        for="plone.dexterity.interfaces.IDexterityContainer
+        zope.lifecycleevent.interfaces.IObjectMovedEvent"
+        handler=".views.objectTranslated" />
+
+</configure>

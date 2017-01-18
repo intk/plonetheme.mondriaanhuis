@@ -1,0 +1,179 @@
+/* This is a bundle that uses RequireJS to pull in dependencies.
+   These dependencies are defined in the registry.xml file */
+
+
+/* do not include jquery multiple times */
+if (window.jQuery) {
+  define('jquery', [], function() {
+    return window.jQuery;
+  });
+}
+
+var panorama = null;
+var interval_time = 55;
+var heading_increase = 0.01;
+var pov_pitch = 0; /* original pitch */
+var acceleration = 0.004;
+var heading_high_limit = 300; /* Start point */
+var heading_low_limit = 197.98; 
+var heading_middle = heading_high_limit - ((heading_high_limit - heading_low_limit) / 2);
+var pov_interval = null;
+
+function movePOV() {
+  if (panorama != undefined && panorama != null) { 
+    var current_heading = panorama.getPov().heading;
+    var new_heading = current_heading - heading_increase;
+    panorama.setPov({heading: new_heading, pitch: 0});
+
+    if (current_heading <= heading_middle) {
+      /* Deacelarates - remove acceleration */
+      heading_increase = heading_increase - acceleration;
+    } else {
+      /* Acelerates  - add acceleration */
+      heading_increase = heading_increase + acceleration;
+    }
+
+    if (current_heading <= heading_low_limit) {
+      clearInterval(pov_interval);
+    }
+  }
+}
+
+$(document).ready(function($){
+  var isLateralNavAnimating = false;
+  
+  //open/close lateral navigation
+  $('.cd-nav-trigger').on('click', function(event) {
+    event.preventDefault();
+    //stop if nav animation is running 
+
+    if (slickSlideshow != undefined) {
+      if (slickSlideshow.playing) {
+        slickSlideshow.pauseCurrentSlide();
+      }
+    }
+
+    if( !isLateralNavAnimating ) {
+      if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true; 
+      
+      $('body').toggleClass('navigation-is-open');
+      $('.cd-navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+        //animation is over
+        isLateralNavAnimating = false;
+      });
+    }
+  });
+
+  /* Street view functionality */
+
+  if ($("#street-view").length > 0) {
+    options = {};
+    options['lat'] = $("#street-view").data('lat');
+    options['lng'] = $("#street-view").data('lng');
+    options['heading'] = $("#street-view").data('heading');
+    options['pitch'] = $("#street-view").data('pitch');
+    options['heading_lower'] = $("#street-view").data('headinglower');
+
+    if ($("#street-view").data('addresscontrol') == "False"){
+      options['addressControl'] = false 
+    }
+    else{
+      options['addressControl'] = true 
+    }
+    if ($("#street-view").data('zoomcontrol') == "False"){
+      options['zoomControl'] = false 
+    }
+    else{
+      options['zoomControl'] = true 
+    }
+    
+    if ($("#street-view").data('linkscontrol') == "False"){
+      options['linksControl'] = false 
+    }
+    else{
+      options['linksControl'] = true 
+    }
+    
+    if ($("#street-view").data('pancontrol') == "False"){
+      options['panControl'] = false 
+    }
+    else{
+      options['panControl'] = true 
+    }
+    
+    if ($("#street-view").data('enableclosebutton') == "False") {
+      options['enableCloseButton'] = false 
+    }
+    else{
+      options['enableCloseButton'] = true 
+    }
+    
+    if ($("#street-view").data('fullscreencontrol') == "False") {
+      options['fullscreenControl'] = false 
+    }
+    else {
+      options['fullscreenControl'] = true 
+    }
+    
+    panorama = new google.maps.StreetViewPanorama(
+    document.getElementById('street-view'),
+    {
+      position: {lat: options['lat'], lng: options['lng']},
+      pov: {heading: options['heading'], pitch: options['pitch']},
+      zoom: options['zoom'],
+      addressControl: options['addressControl'],
+      zoomControl: options['zoomControl'],
+      linksControl: options['linksControl'],
+      panControl: options['panControl'],
+      enableCloseButton: options['enableCloseButton'],
+      fullscreenControl: options['fullscreenControl'],
+    });
+
+    if (options['heading_lower'] != undefined && options['heading_lower'] != '') {
+      pov_pitch = options['pitch'];
+      heading_low_limit = options['heading_lower'];
+      heading_high_limit = options['heading'];
+      heading_middle = heading_high_limit - ((heading_high_limit - heading_low_limit) / 2);
+    }
+
+    jQuery("#street-view").on('click touchstart', function() {
+      clearInterval(pov_interval);
+    });
+  }
+
+  $(".play-button").on('click', function()  {
+    if ($(this).hasClass('playing')) {
+      $(this).removeClass('playing');
+      $(this).addClass('paused');
+      $(this).removeClass('hi-icon-volume-up');
+      $(this).addClass('hi-icon-volume-off');
+      //player.pause();
+    } else if ($(this).hasClass('paused')) {
+      $(this).removeClass('paused');
+      $(this).addClass('playing');
+      $(this).removeClass('hi-icon-volume-off');
+      $(this).addClass('hi-icon-volume-up');
+      //player.play();
+    } else {
+      $(this).addClass('playing');
+      //player.play();
+      $(this).removeClass('hi-icon-volume-pff');
+      $(this).addClass('hi-icon-volume-up');
+    }
+  });
+});
+
+require([
+  'jquery',
+], function($, dep1, logger){
+  'use strict';
+
+  // initialize only if we are in top frame
+  if (window.parent === window) {
+    $(document).ready(function() {
+      $('body').addClass('zeeuwsmuseum-main');
+    });
+  }
+});
+
+

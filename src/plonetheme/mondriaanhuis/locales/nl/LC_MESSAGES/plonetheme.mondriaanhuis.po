@@ -1,0 +1,100 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plonetheme.mondriaanhuis\n"
+"POT-Creation-Date: 2016-09-30 11:25+0000\n"
+"PO-Revision-Date: 2016-09-30 11:25+0000’\n"
+"Last-Translator: INTK <info@intk.com>\n"
+"Language-Team: Dutch <info@intk.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: nl\n"
+"Language-Name: Dutch\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: plonetheme.mondriaanhuis\n"
+
+#: ../object.py
+msgid 'identification_identification_objectNumber'
+msgstr 'Objectnummer'
+
+#: ../object.py
+msgid 'identification_objectNumber'
+msgstr 'Objectnummer'
+
+#: ../object.py
+msgid 'titleAuthorImprintCollation_titleAuthor_author'
+msgstr 'Auteur'
+
+#: ../object.py
+msgid 'titleAuthorImprintCollation_imprint_year'
+msgstr 'Jaar'
+
+#: ../object.py
+msgid 'identification_objectName_objectname_type'
+msgstr 'Objectnaam'
+
+#: ../object.py
+msgid 'identification_objectName_objectname'
+msgstr 'Objectnaam'
+
+#: ../object.py
+msgid 'physicalCharacteristics_materials'
+msgstr 'Materiaal'
+
+#: ../object.py
+msgid 'identification_identification_collection'
+msgstr 'Collectie'
+
+#: ../object.py
+msgid 'physicalCharacteristics_techniques'
+msgstr 'Techniek'
+
+#: ../object.py
+msgid 'productionDating_productionDating_maker'
+msgstr 'Vervaardiger'
+
+#: ../object.py
+msgid 'identification_taxonomy_commonName'
+msgstr "Populaire naam"
+
+#: ../object.py
+msgid 'associations_associatedSubjects_subject'
+msgstr 'Trefwoord'
+
+#: ../object.py
+msgid 'identification_taxonomy_scientificName'
+msgstr 'Wetenschappelijke naam'
+
+#: ../object.py
+msgid 'Title'
+msgstr "Titel"
+
+#: ../object.py
+msgid 'type_to_search'
+msgstr "Type om te zoeken"
+
+#: ../object.py
+msgid 'path'
+msgstr "pad"
+
+#: ../object.py
+msgid "Body"
+msgstr "Tekst"
+
+#: ../object.py
+msgid "Description"
+msgstr "Beschrijving"
+
+#: ../object.py
+msgid "Creator"
+msgstr "Auteur"
+
+#: ../object.py
+msgid "location_currentlocation"
+msgstr "Standplaats"
+
+#: ../object.py
+msgid 'object_on_display'
+msgstr "Nu te zien"
+

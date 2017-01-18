@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Clean Blog</title>
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div id="website-wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top plone-navbar" id="website-nav">
+        
+    </nav>
+
+    <!--<div class="logo-wrapper">
+        <div class="brand-logo">Start Bootstrap</div>
+    </div>-->
+            
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header">
+        <div id="slickslideshow">
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <!-- Above content -->
+        <div class="row no-margin">
+            <div class="container" id="global_statusmessage"></div>
+            <div class="container" id="above-content"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container" id="column1-container">
+            <div class="row">
+            </div>
+        </div>
+
+        <div class="container main-container">
+            
+            <div class="row">
+                <div class="title-container">
+                    <h1 class="brand-name">Clean Blog</h1>
+                    <span class="subheading"><div class="documentDescription">A Clean Blog Theme by Start Bootstrap</div></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 main-content">
+                    <div id="content-container">
+                    </div>
+                </div>
+                <div id="below-content"></div>
+            </div>
+        </div>
+        
+        <div class="container" id="column2-container">
+            <div class="row">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+        </div>
+    </footer>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChhDADsgOq0NAOhmc0SdGpnz1lbHgrhS0"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/zeeuwsmuseum.min.js"></script> 
+</body>
+</html>

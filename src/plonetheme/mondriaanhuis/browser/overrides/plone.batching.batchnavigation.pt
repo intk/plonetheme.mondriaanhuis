@@ -1,0 +1,84 @@
+<!-- Navigation -->
+<tal:batchnavigation define="batch view/batch|nothing"
+    condition="batch"
+    metal:define-macro="navigation">
+
+  <nav class="pagination"
+      i18n:domain="plone"
+      tal:condition="batch/multiple_pages">
+    <ul class="pager">
+
+      <tal:comment replace="nothing">
+        <!-- Previous page -->
+      </tal:comment>
+      <li class="previous" tal:condition="batch/has_previous">
+        <a tal:attributes="href python:view.make_link(batch.previouspage)">
+          &larr;
+        </a>
+      </li>
+
+      <tal:comment replace="nothing">
+        <!-- First page -->
+      </tal:comment>
+      <li class="first" tal:condition="batch/show_link_to_first">
+        <a tal:attributes="href python:view.make_link(1)">1</a>
+      </li>
+
+      <tal:comment replace="nothing">
+        <!-- Ellipsis after first item -->
+      </tal:comment>
+      <li class="disabled" tal:condition="batch/second_page_not_in_navlist">
+        <span>...</span>
+      </li>
+
+      <tal:comment replace="nothing">
+        <!-- Pagelist with links to previous pages for quick navigation -->
+      </tal:comment>
+      <li tal:repeat="pagenumber batch/previous_pages">
+        <a tal:content="pagenumber"
+            tal:attributes="href python:view.make_link(pagenumber)" />
+      </li>
+
+      <tal:comment replace="nothing">
+        <!-- Active page -->
+      </tal:comment>
+      <li class="active" tal:condition="batch/navlist">
+        <span tal:content="batch/pagenumber" />
+      </li>
+
+      <tal:comment replace="nothing">
+        <!-- Pagelist with links to next pages for quick navigation -->
+      </tal:comment>
+      <li tal:repeat="pagenumber batch/next_pages">
+        <a tal:content="pagenumber"
+            tal:attributes="href python:view.make_link(pagenumber)" />
+      </li>
+
+      <tal:comment replace="nothing">
+        <!-- Ellipsis before last item -->
+      </tal:comment>
+      <li class="disabled" tal:condition="batch/before_last_page_not_in_navlist">
+        <span>...</span>
+      </li>
+
+      <tal:comment replace="nothing">
+        <!-- Last page -->
+      </tal:comment>
+      <li class="last" tal:condition="batch/show_link_to_last">
+        <a tal:attributes="href python:view.make_link(batch.lastpage)"
+            tal:content="batch/lastpage" />
+      </li>
+
+      <tal:comment replace="nothing">
+        <!-- Next page -->
+      </tal:comment>
+      <li class="next" tal:condition="batch/has_next">
+        <a tal:attributes="href python:view.make_link(batch.nextpage)">
+          &rarr;
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+</tal:batchnavigation>

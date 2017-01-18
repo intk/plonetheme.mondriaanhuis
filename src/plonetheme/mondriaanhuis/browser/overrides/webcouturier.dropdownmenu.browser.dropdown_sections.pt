@@ -1,0 +1,124 @@
+<tal:sections
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:metal="http://xml.zope.org/namespaces/metal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     tal:define="portal_tabs view/portal_tabs"
+     i18n:domain="plone">
+
+  <p class="hiddenStructure" i18n:translate="heading_sections">Navigation</p>
+  <nav class="plone-navbar navbar" id="portal-globalnav-wrapper">
+    <div class="container-fluid"
+      tal:define="language python: getattr(context, 'language', 'nl') if getattr(context, 'language', 'nl') != '' else 'nl';
+                  extra_languages python: view.extra_languages();">
+
+      <div class="plone-navbar-header navbar-header">
+        <a href="#portal-globalnav-collapse" class="nav-trigger" data-toggle="collapse" data-target="#portal-globalnav-collapse" aria-expanded="false">
+          <span>
+            <em aria-hidden="true"></em>
+          </span>
+        </a>
+        <a class="navbar-brand" href="/">
+          MONDRIAANHUIS
+        </a>
+        <img src="++resource++plonetheme.mondriaanhuis/icon-search-blue.svg" style="display: none;"/>
+      </div>
+
+      <div class="plone-collapse collapse navbar-collapse" id="portal-globalnav-collapse">
+        <form class="navbar-form navbar-right menu-search-button">
+            <a href="#" type="input" class="btn btn-default nav-btn" tal:attributes="href python: '/'+language+'/search'"><i class="fa fa-search fa-lg"></i></a>
+        </form>
+        
+        <tal:testlang tal:condition="not:extra_languages">
+          <form class="navbar-form navbar-right language-selector" tal:condition="python: language == 'nl'">
+            <a href="#" type="input" class="btn btn-default nav-btn lang-btn" tal:attributes="href python: '/@@multilingual-selector/'+view.getTranslationGroup()+'/en?set_language=en'">EN</a>
+          </form>
+          <form class="navbar-form navbar-right language-selector" tal:condition="python: language == 'en'">
+            <a href="#" type="input" class="btn btn-default nav-btn lang-btn" tal:attributes="href python: '/@@multilingual-selector/'+view.getTranslationGroup()+'/nl?set_language=nl'">NL</a>
+          </form>
+        </tal:testlang>
+
+        <tal:testlang tal:condition="extra_languages">
+          <ul id="language-dropdown" class="nav plone-nav plone-navbar-nav navTreeRoot navbar-nav navbar-right">
+            <li class="dropdown">
+              <tal:testlang tal:condition="python: language == 'en'">
+                <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                  EN
+                  <span class="fa fa-angle-down"></span>
+                </a>
+              </tal:testlang>
+              <tal:testlang tal:condition="python: language != 'en'">
+                <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                  NL
+                  <span class="fa fa-angle-down"></span>
+                </a>
+              </tal:testlang>
+              <ul class="submenu dropdown-menu">
+                <li>
+                  <tal:testlang tal:condition="python: language == 'en'">
+                    <a href="#" tal:attributes="href python: '/@@multilingual-selector/'+view.getTranslationGroup()+'/nl?set_language=nl'" class="clearfix">NL</a>
+                  </tal:testlang>
+                  <tal:testlang tal:condition="python: language != 'en'">
+                    <a href="#" tal:attributes="href python: '/@@multilingual-selector/'+view.getTranslationGroup()+'/en?set_language=en'" class="clearfix">
+                      EN
+                    </a>
+                  </tal:testlang>
+                </li>
+                <tal:extra_lang tal:repeat="extra_lang extra_languages">
+                  <li class="extra-lang">
+                    <a href="#" tal:attributes="href python: extra_lang.get('url', '')" tal:content="python: extra_lang.get('id', '')" class="clearfix">
+                      DE
+                    </a>
+                  </li>
+                </tal:extra_lang>
+              </ul>
+            </li>
+          </ul>
+        </tal:testlang>
+
+        <ul id="portal-globalnav" class="plone-nav plone-navbar-nav navTreeRoot nav navbar-nav navbar-right"
+            tal:define="selected_tab python:view.selected_portal_tab">
+            <tal:tabs tal:repeat="tab portal_tabs">
+              <li tal:define="tid tab/id;
+                              href tab/url;
+                              title tab/description|nothing;
+                              target tab/link_target|nothing;
+                              subitems python:view.getTabObject(tabUrl=tab['url'], tabPath=tab.get('path'));
+                              class_position python:'menu-position-{0}'.format(repeat.tab.number);
+                              class_children python:' hasDropDown dropdown' if subitems else '';
+                              class_selected python:' selected active' if href in context.absolute_url() else '';
+                              review_state python:'state-' + tab.get('review_state') if tab.get('review_state', None) else None"
+                  tal:attributes="id string:portaltab-${tid};
+                                  class string:${class_position}${class_children}${class_selected}">
+
+                  <a
+                      tal:condition="subitems"
+                      tal:attributes="title title; target target;"
+                      href="#"
+                      class="dropdown-toggle ${review_state}"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      data-toggle="dropdown">
+                      <tal:text replace="tab/name"/>
+                      <span class="fa fa-angle-down"></span></a>
+                  <a
+                      tal:condition="not:subitems"
+                      tal:attributes="href href; title title; target target;"
+                      class="${review_state}"
+                      tal:content="tab/name">Tab Name</a>
+
+                  <tal:block tal:condition="subitems">
+                  <ul class="submenu dropdown-menu">
+                  <tal:subitems tal:replace="structure subitems">
+                    <tal:comment replace="nothing">Submenu</tal:comment>
+                  </tal:subitems>
+                  </ul>
+                  </tal:block>
+              </li>
+            </tal:tabs>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</tal:sections>

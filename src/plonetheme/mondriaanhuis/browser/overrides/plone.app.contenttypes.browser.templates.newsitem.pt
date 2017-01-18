@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;
+                                portal_state context/@@plone_portal_state;
+                                navigation_root_url nocall: portal_state/portal_url;">
+  <div id="author-container"
+    tal:define="
+      item_creator context/Creator;
+      item_created context/CreationDate;
+      toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+    "
+  >
+    <tal:name tal:condition="item_creator">
+      <span i18n:translate="label_by_author">
+      by
+        <a tal:attributes="href string:${navigation_root_url}/author/${item_creator}"
+          tal:content="item_creator"
+          tal:omit-tag="not:item_creator"
+          i18n:name="author">
+          Bob Dobalina
+        </a> on <span id="post-created-date" tal:content="python: toLocalizedTime(item_created)"></span>
+      </span>
+    </tal:name>
+  </div>
+
+  <div id="parent-fieldname-text"
+      tal:condition="context/text"
+      tal:content="structure python:context.text.output_relative_to(view.context)"
+      tal:attributes="class python: toc and 'pat-autotoc' or ''" />
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plonetheme.mondriaanhuis\n"
+"POT-Creation-Date: 2016-09-30 11:25+0000\n"
+"PO-Revision-Date: 2016-09-30 11:25+0000’\n"
+"Last-Translator: INTK <info@intk.com>\n"
+"Language-Team: English <info@intk.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: nl\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: plonetheme.mondriaanhuis\n"
+
+#: ../object.py
+msgid 'identification_identification_objectNumber'
+msgstr 'Object number'
+
+#: ../object.py
+msgid 'identification_objectNumber'
+msgstr 'Object number'
+
+#: ../object.py
+msgid 'titleAuthorImprintCollation_titleAuthor_author'
+msgstr 'Author'
+
+#: ../object.py
+msgid 'titleAuthorImprintCollation_imprint_year'
+msgstr 'Year'
+
+#: ../object.py
+msgid 'identification_objectName_objectname_type'
+msgstr 'Object type'
+
+#: ../object.py
+msgid 'identification_objectName_objectname'
+msgstr 'Object type'
+
+#: ../object.py
+msgid 'physicalCharacteristics_materials'
+msgstr 'Material'
+
+#: ../object.py
+msgid 'identification_identification_collection'
+msgstr 'Collection'
+
+#: ../object.py
+msgid 'physicalCharacteristics_techniques'
+msgstr 'Technique'
+
+#: ../object.py
+msgid 'productionDating_productionDating_maker'
+msgstr 'Maker'
+
+#: ../object.py
+msgid 'identification_taxonomy_commonName'
+msgstr 'Common name'
+
+#: ../object.py
+msgid 'associations_associatedSubjects_subject'
+msgstr 'Keyword'
+
+#: ../object.py
+msgid 'identification_taxonomy_scientificName'
+msgstr 'Scientific name'
+
+
+#: ../object.py
+msgid 'type_to_search'
+msgstr "Type to search"
+
+#: ../object.py
+msgid 'path'
+msgstr "path"
+
+#: ../object.py
+msgid 'object_on_display'
+msgstr "Now on display"
+
