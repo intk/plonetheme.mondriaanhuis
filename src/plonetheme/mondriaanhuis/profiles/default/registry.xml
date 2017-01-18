@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <registry>
-    <records prefix="plone.resources/zeeuwsmuseum"
+    <records prefix="plone.resources/mondriaanhuis"
               interface='Products.CMFPlone.interfaces.IResourceRegistry'>
        <value key="js">++theme++plonetheme.mondriaanhuis/js/bundle.js</value>
        <value key="css">
@@ -9,15 +9,15 @@
     </records>
 
     <!-- bundle definition -->
-    <records prefix="plone.bundles/zeeuwsmuseum-bundle"
+    <records prefix="plone.bundles/mondriaanhuis-bundle"
               interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="merge_with"></value>
       
       <value key="resources">
-        <element>zeeuwsmuseum</element>
+        <element>mondriaanhuis</element>
       </value>
-      <value key="jscompilation">++theme++plonetheme.mondriaanhuis/js/zeeuwsmuseum-bundle-compiled.js</value>
-      <value key="csscompilation">++theme++plonetheme.mondriaanhuis/css/zeeuwsmuseum-bundle-compiled.css</value>
+      <value key="jscompilation">++theme++plonetheme.mondriaanhuis/js/mondriaanhuis-bundle-compiled.js</value>
+      <value key="csscompilation">++theme++plonetheme.mondriaanhuis/css/mondriaanhuis-bundle-compiled.css</value>
       <value key="last_compilation">2015-02-16 00:00:00</value>
       <value key="enabled">True</value>
       <value key="compile">True</value>

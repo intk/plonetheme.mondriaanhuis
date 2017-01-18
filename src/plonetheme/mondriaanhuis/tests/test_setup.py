@@ -22,7 +22,7 @@ class TestSetup(unittest.TestCase):
             'plonetheme.mondriaanhuis'))
 
     def test_browserlayer(self):
-        """Test that IPlonethemezeeuwsmuseumLayer is registered."""
+        """Test that IPlonethememondriaanhuisLayer is registered."""
         from plonetheme.mondriaanhuis.interfaces import (
             IPlonethemeModernBaseLayer)
         from plone.browserlayer import utils
@@ -44,7 +44,7 @@ class TestUninstall(unittest.TestCase):
             'plonetheme.mondriaanhuis'))
 
     def test_browserlayer_removed(self):
-        """Test that IPlonethemezeeuwsmuseumLayer is removed."""
+        """Test that IPlonethememondriaanhuisLayer is removed."""
         from plonetheme.mondriaanhuis.interfaces import IPlonethemeModernBaseLayer
         from plone.browserlayer import utils
         self.assertNotIn(IPlonethemeModernBaseLayer, utils.registered_layers())

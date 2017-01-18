@@ -272,7 +272,7 @@ require([
   // initialize only if we are in top frame
   if (window.parent === window) {
     jQuery(document).ready(function() {
-      jQuery('body').addClass('zeeuwsmuseum-main');
+      jQuery('body').addClass('mondriaanhuis-main');
     });
   }
 });

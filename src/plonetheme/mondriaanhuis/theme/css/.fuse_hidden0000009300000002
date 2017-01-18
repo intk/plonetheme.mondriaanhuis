@@ -5900,7 +5900,7 @@ body.frontend.portaltype-event {
 	}
 }
 
-body.portaltype-portlet-page.section-zeeuws-museum-v4,
+body.portaltype-portlet-page.section-mondriaanhuis-v4,
 body.portaltype-portlet-page.subsection-front-page-fullscreen,
   {
 	footer, .main-container, #column1-container, #column2-container, .page-container {

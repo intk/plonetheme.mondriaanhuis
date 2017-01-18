@@ -25,7 +25,7 @@
 
       <div class="plone-collapse collapse navbar-collapse" id="portal-globalnav-collapse">
         <form class="navbar-form navbar-right menu-search-button">
-            <a href="#" type="input" class="btn btn-default nav-btn" tal:attributes="href python: '/'+language+'/search'"><i class="fa fa-search fa-lg"></i></a>
+            <a href="#" type="input" class="btn btn-default nav-btn" tal:attributes="href python: '/search'"><i class="fa fa-search fa-lg"></i></a>
         </form>
         
         <tal:testlang tal:condition="not:extra_languages">

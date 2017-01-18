@@ -24,18 +24,18 @@ class PlonethemeModernBaseLayer(PloneSandboxLayer):
         applyProfile(portal, 'plonetheme.mondriaanhuis:default')
 
 
-PLONETHEME_MODERNBASE_FIXTURE = PlonethemezeeuwsmuseumLayer()
+PLONETHEME_MODERNBASE_FIXTURE = PlonethememondriaanhuisLayer()
 
 
 PLONETHEME_MODERNBASE_INTEGRATION_TESTING = IntegrationTesting(
     bases=(PLONETHEME_MODERNBASE_FIXTURE,),
-    name='PlonethemezeeuwsmuseumLayer:IntegrationTesting'
+    name='PlonethememondriaanhuisLayer:IntegrationTesting'
 )
 
 
 PLONETHEME_MODERNBASE_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(PLONETHEME_MODERNBASE_FIXTURE,),
-    name='PlonethemezeeuwsmuseumLayer:FunctionalTesting'
+    name='PlonethememondriaanhuisLayer:FunctionalTesting'
 )
 
 
@@ -45,5 +45,5 @@ PLONETHEME_MODERNBASE_ACCEPTANCE_TESTING = FunctionalTesting(
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE
     ),
-    name='PlonethemezeeuwsmuseumLayer:AcceptanceTesting'
+    name='PlonethememondriaanhuisLayer:AcceptanceTesting'
 )
