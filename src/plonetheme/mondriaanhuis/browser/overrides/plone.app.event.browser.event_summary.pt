@@ -7,7 +7,8 @@
       tal:omit-tag="">
 <body tal:omit-tag="">
 
-<tal:def tal:define="data python:view.data; excludes view/excludes">
+<tal:def tal:define="data python:view.data; excludes view/excludes;
+                     is_past python: context.restrictedTraverse('@@advancedsearch').isEventPast(context);">
   
   <ul class="event summary details" summary="Event details" i18n:attributes="summary summary_event_details">
     <tal:cond condition="python:'title' not in excludes">
@@ -27,7 +28,7 @@
     </tal:cond>
 
     <tal:cond condition="python:'date' not in excludes">
-      <li class="event-date">
+      <li class="event-date" tal:attributes="class python: 'event-date past' if is_past else 'event-date'">
         <strong i18n:translate="event_when" class="event-date-title">When</strong>
         <span tal:define="start_tzname data/timezone;
                       start_utcdelta python:data.start.tzinfo.utcoffset(data.start);

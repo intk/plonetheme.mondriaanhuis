@@ -20,7 +20,8 @@
 
   <metal:listingmacro define-macro="listing">
     <tal:results define="batch view/batch;
-                         b_start python: request.get('b_start', 0);">
+                         b_start python: request.get('b_start', 0);
+                         portal context/@@plone_portal_state/portal">
       <tal:listing condition="batch">
         <div class="entries" metal:define-slot="entries">
           <tal:repeat repeat="item batch" metal:define-macro="entries">
@@ -75,8 +76,9 @@
                           <div>
                             <metal:block metal:define-macro="document_byline">
                             
-                            <tal:event condition="item_is_event">
-                              <p class="event-date">
+                            <tal:event condition="item_is_event"
+                                        tal:define="is_past python: portal.restrictedTraverse('@@advancedsearch').isEventPast(item);">
+                              <p class="event-date" tal:attributes="class python: 'event-date past' if is_past else 'event-date'">
                               <tal:date tal:replace="structure python:view.formatted_date(item)"/>
                               <span tal:condition="item/location" i18n:translate="label_event_byline_location">&mdash;
                                 <span tal:content="string:${item/location}" class="location" i18n:name="location">Oslo</span>,

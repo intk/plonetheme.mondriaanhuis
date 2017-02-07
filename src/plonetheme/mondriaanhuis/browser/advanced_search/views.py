@@ -7,6 +7,9 @@ from AccessControl import getSecurityManager
 from zope.component import getUtility
 from plone.registry.interfaces import IRegistry
 from plone.app.uuid.utils import uuidToCatalogBrain
+from datetime import date
+from DateTime import DateTime
+import time
 
 class AdvancedSearchView(BrowserView, Search):
     """
@@ -32,6 +35,24 @@ class AdvancedSearchView(BrowserView, Search):
             q = "&".join(["%s=%s" %(param,value.decode('utf-8').encode('ascii', 'ignore')) for param,value in params if param in advancedfields and value])
 
         return q
+
+    def isEventPast(self, event):
+        """
+        Checks if the event is already past
+        """
+        if event.portal_type != 'Event':
+            return False
+        else:
+            try:
+                t = DateTime(time.time())
+                if event.end is not None:
+                    end = DateTime(event.end)
+                    return end.year() < t.year() or (end.year() == t.year() and end.month() < t.month()) or(end.year() == t.year() and end.month() == t.month() and end.day() < t.day())
+                else:
+                    start = DateTime(event.start)
+                    return start.year() < t.year() or (start.year() == t.year() and start.month() < t.month()) or(start.year() == t.year() and start.month() == t.month() and start.day() < t.day())
+            except:
+                return False
 
     def getSearchFilters(self, lang='nl'):
         searchFilters = []
