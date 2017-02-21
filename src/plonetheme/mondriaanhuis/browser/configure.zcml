@@ -46,4 +46,16 @@
         zope.lifecycleevent.interfaces.IObjectMovedEvent"
         handler=".views.objectTranslated" />
 
+  <!-- Register the portlet -->
+  <plone:portlet
+     name="plonetheme.mondriaanhuis.frontPagePortlet"
+     interface=".portlet_frontpage.portlet_frontpage.IPortletFrontpage"
+     assignment=".portlet_frontpage.portlet_frontpage.Assignment"
+     view_permission="zope2.View"
+     edit_permission="plone.portlet.collection.AddCollectionPortlet"
+     renderer=".portlet_frontpage.portlet_frontpage.Renderer"
+     addview=".portlet_frontpage.portlet_frontpage.AddForm"
+     editview=".portlet_frontpage.portlet_frontpage.EditForm"
+     />
+
 </configure>

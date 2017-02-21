@@ -110,6 +110,7 @@
         css:theme="#slickcarousel"
         css:content="#slickcarousel"
         method="raw"
+        css:if-not-content="body.portaltype-portlet-page"
       />
 
       <replace
@@ -120,8 +121,11 @@
 
       <drop css:content="#viewlet-social-like"/>
 
-      <drop css:content="#slickslideshow"/>
-      <drop css:content="#slickcarousel"/>
+      <drop css:content="#slickslideshow" css:if-not-content="body.portaltype-portlet-page"/>
+      <drop css:content="#slickcarousel" css:if-not-content="body.portaltype-portlet-page"/>
+      <drop css:theme="#slickcarousel" css:if-content="body.portaltype-portlet-page"/>
+      <drop css:theme="#slickslideshow" css:if-content="body.portaltype-portlet-page"/>
+      
       <drop css:content=".event.summary"/>
       <drop css:content=".contentsListing"/>
 
@@ -265,5 +269,30 @@
           <xsl:copy-of select="."/>
         </div>
       </replace>
+
+      <replace css:content="#column-collective-portletpage-toprow-portlet-header">
+        <div class="row no-margin">
+          <xsl:copy-of select="."/>
+          <xsl:copy-of select="//div[@id='column-collective-portletpage-toprow-portlet-nieuws']"/>
+        </div>
+      </replace>
+
+      <drop css:content="#column-collective-portletpage-toprow-portlet-nieuws"/>
+
+      <replace css:content="#column-collective-portletpage-toprow-portlet-activiteiten">
+        <div class="row no-margin">
+          <xsl:copy-of select="."/>
+        </div>
+      </replace>
+
+      <replace css:content="#column-collective-portletpage-toprow-portlet-tentoonstelling">
+        <div class="row no-margin">
+          <xsl:copy-of select="."/>
+          <xsl:copy-of select="//div[@id='column-collective-portletpage-toprow-portlet-beleef-mondriaan']"/>
+        </div>
+      </replace>
+
+      <drop css:content="#column-collective-portletpage-toprow-portlet-beleef-mondriaan"/>
+
 
 </rules>
