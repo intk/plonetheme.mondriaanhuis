@@ -68,7 +68,7 @@
           <a tal:attributes="href collection_url">
              <span class="hiddenStructure"><span tal:replace="view/data/header" /> - </span>
              <tal:more_text tal:condition="more_text">
-              <span tal:content="more_text">More&hellip;</span>
+              <span tal:content="more_text">More&hellip;</span> <span class="fa fa-chevron-right"></span>
              </tal:more_text>
              <tal:no_more_text tal:condition="not:more_text">
               <span i18n:translate="more_url">More&hellip;</span>
