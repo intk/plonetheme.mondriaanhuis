@@ -890,7 +890,7 @@ body:not(.frontend) {
 }
 
 .inputField() {
-	.universLight();
+	.PlutoSansLight();
     margin: 0 auto;
     display: block;
     padding: 16px;
@@ -942,14 +942,14 @@ body:not(.frontend) {
 	}
 
 	div {
-		.universLight();
+		.PlutoSansLight();
     	font-size: 16px;
     	letter-spacing: 0.05em;
     	color: #000000;
 	}
 
     ol li, ul li {
-    	.universLight();
+    	.PlutoSansLight();
     	letter-spacing: 0.05em;
     	color: #000000;
     	font-size: 17px;
@@ -999,7 +999,7 @@ body:not(.frontend) {
 		padding-right: 20px;
 		padding-top: 3px;
 		line-height: 32px;
-		.universLight();
+		.PlutoSansLight();
 		font-size: 17px;
 		letter-spacing: 0.075em;
 		vertical-align: middle;
@@ -1280,7 +1280,7 @@ body.frontend, body#tinymce {
     		display: block;
     		margin-top: 20px;
     		margin-bottom: 15px;
-    		.universLight();
+    		.PlutoSansLight();
 
     		&:empty {
     			margin-top: -15px;
@@ -1408,7 +1408,7 @@ body.frontend, body#tinymce {
     }
 
     p {
-    	.universLight();
+    	.PlutoSansLight();
     	font-size: 1.188em;
     	line-height: 37px;
     	letter-spacing: 0.05em;
@@ -1428,7 +1428,7 @@ body.frontend, body#tinymce {
     }
 
     p strong {
-    	.universLight();
+    	.PlutoSansLight();
     	font-size: 1.000em;
     	line-height: 37px;
     	color: #000000;
@@ -1627,7 +1627,7 @@ body.frontend, body#tinymce {
 		    letter-spacing: 0.05em;
 			margin-bottom: 20px;
 			margin-top: 0px;
-			.universLight();
+			.PlutoSansLight();
 		}
 
 		.main-content {
@@ -2501,7 +2501,7 @@ footer {
 		}
 
 		p strong {
-			.universLight();
+			.PlutoSansLight();
 			font-size: 24px;
 			color: #4b4b4b;
 		}
@@ -4428,7 +4428,7 @@ body.template-listing_view {
 
 .plone-navbar-nav li .submenu a {
 	color: #000000;
-	.universLight();
+	.PlutoSansLight();
 	letter-spacing: 0.1em;
 	padding: 4px;
 	padding-bottom: 6px;

@@ -946,14 +946,14 @@ body:not(.frontend) {
 	}
 
 	div {
-		.universLight();
+		.PlutoSansLight();
     	font-size: 16px;
     	letter-spacing: 0.05em;
     	color: #000000;
 	}
 
     ol li, ul li {
-    	.universLight();
+    	.PlutoSansLight();
     	letter-spacing: 0.05em;
     	color: #000000;
     	font-size: 17px;
@@ -1399,7 +1399,7 @@ body.frontend, body#tinymce {
     }
 
     p {
-    	.universLight();
+    	.PlutoSansLight();
     	font-size: 1.188em;
     	line-height: 37px;
     	letter-spacing: 0.05em;
@@ -1418,7 +1418,7 @@ body.frontend, body#tinymce {
     }
 
     p strong {
-    	.universLight();
+    	.PlutoSansLight();
     	font-size: 1.000em;
     	line-height: 37px;
     	color: #000000;
@@ -2314,7 +2314,7 @@ footer {
 		}
 
 		p strong {
-			.universLight();
+			.PlutoSansLight();
 			font-size: 24px;
 			color: #4b4b4b;
 		}
@@ -3981,7 +3981,7 @@ body.template-listing_view {
 
 .plone-navbar-nav li .submenu a {
 	color: #000000;
-	.universLight();
+	.PlutoSansLight();
 	letter-spacing: 0.05em;
 	padding: 4px;
 	padding-bottom: 6px;

@@ -45,19 +45,21 @@
           </a> 
         </div>
         <div class="clearfix"></div>
-        <div class="entry-wrapper">
-            <a tal:attributes="href collection_url" tal:omit-tag="not:view/data/show_more">
-                <h5 tal:content="view/data/header"></h5>
-            </a>
-            <h3 class="item-title">
-              <a href="#"
-               tal:attributes="href itemUrl;"
-               tal:content="obj/Title"
-               >
-              Title
-              </a>
-          </h3>
-        </div>
+        <a href="" tal:attributes="href itemUrl" class="item-article-link">
+          <div class="entry-wrapper">
+              <span>
+                  <h5 tal:content="view/data/header"></h5>
+              </span>
+              <h3 class="item-title">
+                <span 
+                 tal:content="obj/Title"
+                 >
+                Title
+                </span>
+            </h3>
+          </div>
+        </a>
+
         </div>
 
       <footer class="portletFooter"

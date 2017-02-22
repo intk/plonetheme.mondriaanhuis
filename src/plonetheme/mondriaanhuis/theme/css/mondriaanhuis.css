@@ -5,7 +5,7 @@
  */
 
 body {
-  font-family: 'UniversLight', Arial, sans-serif;
+  font-family: 'PlutoSansLight', Arial, sans-serif;
   font-size: 16px;
   color: #404040;
 }
@@ -194,7 +194,7 @@ hr.small {
   font-weight: 600;
 }
 .intro-header .post-heading .meta {
-  .universLight();
+  .PlutoSansLight();
   font-style: italic;
   font-weight: 300;
   font-size: 20px;

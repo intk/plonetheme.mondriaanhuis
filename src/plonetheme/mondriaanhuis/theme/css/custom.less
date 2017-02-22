@@ -856,51 +856,54 @@ body:not(.frontend) {
 }
 
 .buttonField() {
-    .PlutoSansRegular();
+    .PlutoSansLight();
     margin: 0 auto;
     display: block;
     padding: 15px;
-    border: 1px solid @brand-primary;
+    border: 1px solid #f0bb25;
     border-radius: 0px;
-    text-transform: uppercase;
+    text-transform: none;
     height: auto;
-    color: @brand-primary;
+    color: #ffffff;
     letter-spacing: 0.1em;
     width: auto;
-    font-size: 14px;
-    background-color: #ffffff;
+    font-size: 18px;
+    background-color: #f0bb25;
     letter-spacing: 0.05em;
     text-shadow: 0px 0px 0px #ffffff;
     font-weight: 400;
     padding-left: 28px;
     padding-right: 28px;
-    padding-bottom: 15px;
+    padding-bottom: 14px;
 
     &:active:focus,
     &:focus {
-        background: @brand-primary;
+        background: #000000;
         color: #ffffff;
     }
 
     &:hover {
-        background: @brand-primary;
+        background: #000000;
         color: #ffffff;
         box-shadow: none;
+        border-bottom: 1px solid #000000 !important;
+        border: 1px solid #000000;
+        text-decoration: underline;
     }
 }
 
 .inputField() {
-    .universLight();
+    .PlutoSansLight();
     margin: 0 auto;
     display: block;
-    padding: 18px;
-    border: 1px solid #c3c3c3;
+    padding: 16px;
+    border: 1px solid #f0bb25;
     border-radius: 0px;
     height: auto;
-    color: #848484;
+    color: #000000;
     letter-spacing: 0.05em;
     width: auto;
-    font-size: 14px;
+    font-size: 18px;
     background-color: #ffffff;
     letter-spacing: 0.05em;
     text-shadow: 0px 0px 0px #ffffff;
@@ -913,7 +916,7 @@ body:not(.frontend) {
     outline-offset: 0px;
     padding-left: 28px;
     padding-right: 28px;
-    padding-bottom: 14px;
+    padding-bottom: 15px;
 
     &:focus {
         -webkit-box-shadow: none;
@@ -949,8 +952,8 @@ body:not(.frontend) {
     }
 
     ol li, ul li {
-        .universLight();
-        letter-spacing: 0.05em;
+        .PlutoSansLight();
+        letter-spacing: 0.0001em;
         color: #000000;
         font-size: 17px;
         /*line-height: 37px;*/
@@ -999,7 +1002,7 @@ body:not(.frontend) {
         padding-right: 20px;
         padding-top: 3px;
         line-height: 32px;
-        .universLight();
+        .PlutoSansLight();
         font-size: 17px;
         letter-spacing: 0.075em;
         vertical-align: middle;
@@ -1214,6 +1217,11 @@ body.frontend, body#tinymce {
             border-top: 0px;
             border-radius: 0px;
             background: none;
+            padding-top: 4px;
+
+            span {
+            	font-family: "PlutoSansLight", "Arial", serif;
+            }
         }
 
         .portletContent {
@@ -1280,7 +1288,7 @@ body.frontend, body#tinymce {
             display: block;
             margin-top: 20px;
             margin-bottom: 15px;
-            .universLight();
+            .PlutoSansLight();
 
             &:empty {
                 margin-top: -15px;
@@ -1408,7 +1416,7 @@ body.frontend, body#tinymce {
     }
 
     p {
-        .universLight();
+        .PlutoSansLight();
         font-size: 1.188em;
         line-height: 37px;
         letter-spacing: 0.05em;
@@ -1428,7 +1436,7 @@ body.frontend, body#tinymce {
     }
 
     p strong {
-        .universLight();
+        .PlutoSansLight();
         font-size: 1.000em;
         line-height: 37px;
         color: #000000;
@@ -1627,7 +1635,7 @@ body.frontend, body#tinymce {
             letter-spacing: 0.05em;
             margin-bottom: 20px;
             margin-top: 0px;
-            .universLight();
+            .PlutoSansLight();
         }
 
         .main-content {
@@ -2344,7 +2352,7 @@ footer {
 
         li {
             padding-left: 0px;
-            margin-bottom: 8px;
+            margin-bottom: 2px;
         }
     }
 
@@ -2396,12 +2404,12 @@ footer {
             margin-top: 0px;
 
             a:not(.text-button) {
-                .PlutoSansRegular();
-                font-size: 15px;
+                .PlutoSansLight();
+                font-size: 18px;
                 text-transform: uppercase;
                 text-decoration: none;
-                color: #848484;
-                letter-spacing: 0.075em;
+                color: #000000;
+                letter-spacing: 0.04em;
                 border-bottom: 0px;
             }
         }
@@ -2425,12 +2433,12 @@ footer {
         a.text-button,
         input.text-button {
             &:hover {
-                text-decoration: none;
+                text-decoration: underline;
             }
 
             &:active,
             &:focus {
-                text-decoration: none;
+                text-decoration: underline;
             }
         }
 
@@ -2453,7 +2461,7 @@ footer {
 
         li {
             color: #000000;
-            font-size: 15px;
+            font-size: 17px;
         }
     }
 
@@ -2497,7 +2505,7 @@ footer {
         }
 
         p strong {
-            .universLight();
+            .PlutoSansLight();
             font-size: 24px;
             color: #4b4b4b;
         }
@@ -2759,9 +2767,9 @@ footer {
         }
 
         span {
-            font-size: 15px;
+            font-size: 17px;
             color: #000000;
-            line-height: 30px;
+            line-height: 24px;
             @media(max-width: 767px) {
                 text-align: center;
             }
@@ -2868,13 +2876,13 @@ footer {
     }
 
     .portletTitle p {
-        .PlutoSansRegular();
-        font-size: 15px;
+        .PlutoSansLight();
+        font-size: 18px;
         text-transform: uppercase;
         text-decoration: none;
-        color: #848484;
+        color: #000000;
         font-weight: 400;
-        letter-spacing: 0.075em;
+        letter-spacing: 0.05em;
         margin-top: 0px;
         margin-bottom: 11px;
 
@@ -4424,7 +4432,7 @@ body.template-listing_view {
 
 .plone-navbar-nav li .submenu a {
     color: #000000;
-    .universLight();
+    .PlutoSansLight();
     letter-spacing: 0.1em;
     padding: 4px;
     padding-bottom: 6px;
@@ -6316,7 +6324,7 @@ body.section-frontpage.portaltype-portlet-page {
     
     footer.portletFooter a:hover,
     footer.portletFooter a:focus {
-      text-decoration: underline;
+      text-decoration: none;
       color: #87a4aa;
     }
     
@@ -6325,6 +6333,15 @@ body.section-frontpage.portaltype-portlet-page {
       padding: 20px;
       padding-bottom: 60px;
       opacity: 0.9;
+      -webkit-transition: opacity 0.5s ease-in-out;
+	  -moz-transition: opacity 0.5s ease-in-out;
+	  -ms-transition: opacity 0.5s ease-in-out;
+	  -o-transition: opacity 0.5s ease-in-out;
+	  transition: opacity 0.5s ease-in-out;
+    }
+
+    .item-article-link:hover > .entry-wrapper {
+    	opacity: 1;
     }
     
     @media (max-width: 767px) {
@@ -6409,15 +6426,15 @@ body.section-frontpage.portaltype-portlet-page {
 			border: 0px !important;
 			text-transform: none !important;
 			font-size: 17px;
-			.universLight();
+			.PlutoSansLight();
 
 			&:hover,
 			&:focus,
 			&:active {
-				background-color: #f0bb25;
+				background-color: #000000;
 				border: 0px !important;
 				text-transform: none !important;
-				text-decoration: underline;
+				text-decoration: none !important;
 				font-size: 17px;
 			}
 		}
@@ -6493,7 +6510,6 @@ body.section-frontpage.portaltype-portlet-page {
           bottom: 0;
           left: 0;
           width: 85%;
-          opacity: 0.9;
         }
 
         @media (max-width: 767px) {
@@ -6613,6 +6629,14 @@ body.section-frontpage.portaltype-portlet-page {
     }
 
     /* Tentoonsteling and Beleef Mondriaan */
+
+    #column-collective-portletpage-toprow-portlet-tentoonstelling,
+    #column-collective-portletpage-toprow-portlet-beleef-mondriaan {
+    	.portletCollection {
+    		padding-bottom: 10px !important;
+    	}
+    }
+
     @media (min-width: 768px) {
       #column-collective-portletpage-toprow-portlet-tentoonstelling,
       #column-collective-portletpage-toprow-portlet-beleef-mondriaan {
@@ -6668,7 +6692,6 @@ body.section-frontpage.portaltype-portlet-page {
           top: 0;
           right: 0;
           width: 70%;
-          opacity: 0.9;
         }
 
         @media (max-width: 1199px) {
@@ -6751,7 +6774,6 @@ body.section-frontpage.portaltype-portlet-page {
           bottom: 0;
           left: 0;
           width: 70%;
-          opacity: 0.9;
         }
 
         @media (max-width: 1199px) {
