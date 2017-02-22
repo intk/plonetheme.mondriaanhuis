@@ -270,7 +270,7 @@
         </div>
       </replace>
 
-      <replace css:content="#column-collective-portletpage-toprow-portlet-header">
+      <!-- <replace css:content="#column-collective-portletpage-toprow-portlet-header">
         <div class="row no-margin">
           <xsl:copy-of select="."/>
           <xsl:copy-of select="//div[@id='column-collective-portletpage-toprow-portlet-nieuws']"/>
@@ -292,7 +292,7 @@
         </div>
       </replace>
 
-      <drop css:content="#column-collective-portletpage-toprow-portlet-beleef-mondriaan"/>
+      <drop css:content="#column-collective-portletpage-toprow-portlet-beleef-mondriaan"/>-->
 
 
 </rules>

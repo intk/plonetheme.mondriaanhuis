@@ -856,7 +856,7 @@ body:not(.frontend) {
 }
 
 .buttonField() {
-	.universCn();
+	.PlutoSansRegular();
     margin: 0 auto;
     display: block;
     padding: 17px;
@@ -930,7 +930,7 @@ body:not(.frontend) {
 .documentLayout() {
 	h1 {
 		color: #000000;
-		.universCn();
+		.PlutoSansRegular();
 		font-size: 3.750em;
 		font-weight: 400;
 		text-transform: uppercase;
@@ -1009,7 +1009,7 @@ body:not(.frontend) {
 	}
 
 	table tr:first-child td {
-		.universCn();
+		.PlutoSansRegular();
 		text-transform: uppercase;
 		font-size: 17px;
 		line-height: 22px;
@@ -1261,7 +1261,7 @@ body.frontend, body#tinymce {
     	h1 {
     		color: #000000;
     		margin-bottom: 12px;
-    		.universCn();
+    		.PlutoSansRegular();
     		font-size: 3.750em;
     		font-weight: 400;
     		text-transform: uppercase;
@@ -1338,7 +1338,7 @@ body.frontend, body#tinymce {
 
     /* DOCUMENT LAYOUT */
     h2 {
-    	.universLightCn();
+    	.PlutoSansRegular();
     	font-size: 2.000em;
     	line-height: 40px;
     	color: #000000;
@@ -1352,7 +1352,7 @@ body.frontend, body#tinymce {
     }
 
     h3 {
-    	.universLightCn();
+    	.PlutoSansRegular();
     	font-size: 1.375em;
     	color: #000000;
     	letter-spacing: 0.075em;
@@ -1366,7 +1366,7 @@ body.frontend, body#tinymce {
     }
 
     h4:not(.page-header) {
-    	.universLightCn();
+    	.PlutoSansRegular();
     	font-size: 1.375em;
     	color: #000000;
     	letter-spacing: 0.075em;
@@ -1380,7 +1380,7 @@ body.frontend, body#tinymce {
     }
 
     h5 {
-    	.universLightCn();
+    	.PlutoSansRegular();
     	font-size: 1.250em;
     	color: #000000;
     	letter-spacing: 0.075em;
@@ -1394,7 +1394,7 @@ body.frontend, body#tinymce {
     }
 
     h6 {
-    	.universLightCn();
+    	.PlutoSansRegular();
     	font-size: 1.125em;
     	color: #000000;
     	letter-spacing: 0.075em;
@@ -1747,7 +1747,7 @@ body.frontend, body#tinymce {
 		h1 {
 			font-size: 40px;
 			color: #000000;
-			.universCn();
+			.PlutoSansRegular();
 			text-align: center;
 			margin-top: 25px;
 			font-weight: 400;
@@ -2400,7 +2400,7 @@ footer {
 			margin-top: 0px;
 
 			a:not(.text-button) {
-				.universCn();
+				.PlutoSansRegular();
 				font-size: 17px;
 				text-transform: uppercase;
 				text-decoration: none;
@@ -2872,7 +2872,7 @@ footer {
 	}
 
 	.portletTitle p {
-		.universCn();
+		.PlutoSansRegular();
 		font-size: 17px;
 		text-transform: uppercase;
 		text-decoration: none;
@@ -4193,7 +4193,7 @@ body.frontend {
 			display: inline-block;
 			font-size: 1.400em;
 		    color: #000000;
-			.universLightCn();
+			.PlutoSansRegular();
 		    text-align: center;
 		    margin-top: 45px;
 		    font-weight: 400;
@@ -4450,7 +4450,7 @@ body.template-listing_view {
 	color: #000000;
 	font-size: 17px;
 	text-transform: uppercase;
-	.universCn();
+	.PlutoSansRegular();
 	letter-spacing: 0.1em;
 
 	&:hover,
@@ -4599,7 +4599,7 @@ body.plone-toolbar-left-expanded {
 }
 
 .navbar-default a.navbar-brand {
-	.universCn();
+	.PlutoSansRegular();
 	color: @brand-primary;
 	font-size: 30px;
 	padding-top: 22px;
@@ -4667,7 +4667,7 @@ body.plone-toolbar-left-expanded {
 }
 
 .navbar-default a.lang-btn {
-	.universCn();
+	.PlutoSansRegular();
 	&:hover,
 	&:focus,
 	&:active {
