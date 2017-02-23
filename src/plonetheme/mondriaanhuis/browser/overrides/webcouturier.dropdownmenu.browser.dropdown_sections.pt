@@ -17,10 +17,13 @@
             <em aria-hidden="true"></em>
           </span>
         </a>
-        <a class="navbar-brand" href="/">
-          MONDRIAANHUIS
-        </a>
-        <img src="++resource++plonetheme.mondriaanhuis/icon-search-blue.svg" style="display: none;"/>
+        <div class="menu-logo-wrapper">
+          <a class="navbar-brand" href="/">
+            MONDRIAANHUIS
+          </a>
+          <img src="++resource++plonetheme.mondriaanhuis/icon-search-blue.svg" style="display: none;"/>
+          <!--<img src="http://mondriaanhuis-dev.intk.com/@@site-logo/logo-full.jpg" class="image-logo"/>-->
+        </div>
       </div>
 
       <div class="plone-collapse collapse navbar-collapse" id="portal-globalnav-collapse">
