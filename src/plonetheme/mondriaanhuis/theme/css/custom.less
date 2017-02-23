@@ -6381,7 +6381,7 @@ body.section-frontpage.portaltype-portlet-page {
     }
 
     /* Header */
-    #column-collective-portletpage-toprow-portlet-header {
+    #portletPageTopRow > div:nth-child(1) {
 			
 		float: right;
 		width: 60%;
@@ -6464,7 +6464,7 @@ body.section-frontpage.portaltype-portlet-page {
 
     /* Nieuws */
     
-    #column-collective-portletpage-toprow-portlet-nieuws {
+    #portletPageTopRow > div:nth-child(2) {
     	
         padding-top: 50px;
         
@@ -6535,7 +6535,7 @@ body.section-frontpage.portaltype-portlet-page {
     }
 
     /* Activiteiten */
-    #column-collective-portletpage-toprow-portlet-activiteiten {
+    #portletPageTopRow > div:nth-child(3) {
 
     	pointer-events: none;
 
@@ -6630,27 +6630,27 @@ body.section-frontpage.portaltype-portlet-page {
 
     /* Tentoonsteling and Beleef Mondriaan */
 
-    #column-collective-portletpage-toprow-portlet-tentoonstelling,
-    #column-collective-portletpage-toprow-portlet-beleef-mondriaan {
+    #portletPageTopRow > div:nth-child(4),
+    #portletPageTopRow > div:nth-child(5) {
     	.portletCollection {
     		padding-bottom: 10px !important;
     	}
     }
 
     @media (min-width: 768px) {
-      #column-collective-portletpage-toprow-portlet-tentoonstelling,
-      #column-collective-portletpage-toprow-portlet-beleef-mondriaan {
+      #portletPageTopRow > div:nth-child(4),
+      #portletPageTopRow > div:nth-child(5) {
         width: 50%;
         float: left;
       }
       
-      #column-collective-portletpage-toprow-portlet-tentoonstelling .item-article,
-      #column-collective-portletpage-toprow-portlet-beleef-mondriaan .item-article {
+      #portletPageTopRow > div:nth-child(4) .item-article,
+      #portletPageTopRow > div:nth-child(5) .item-article {
         width: 100%;
       }
     }
 
-    #column-collective-portletpage-toprow-portlet-tentoonstelling {
+    #portletPageTopRow > div:nth-child(4) {
         @media (min-width: 1200px) {
             padding-right: 65px;
         }
@@ -6732,7 +6732,7 @@ body.section-frontpage.portaltype-portlet-page {
         }
     }
 
-    #column-collective-portletpage-toprow-portlet-beleef-mondriaan {
+    #portletPageTopRow > div:nth-child(5) {
         @media (min-width: 1200px) {
             padding-left: 65px;
         }
