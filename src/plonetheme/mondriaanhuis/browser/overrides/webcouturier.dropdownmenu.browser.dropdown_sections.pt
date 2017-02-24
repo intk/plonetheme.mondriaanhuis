@@ -22,7 +22,9 @@
             MONDRIAANHUIS
           </a>
           <img src="++resource++plonetheme.mondriaanhuis/icon-search-blue.svg" style="display: none;"/>
-          <!--<img src="http://mondriaanhuis-dev.intk.com/@@site-logo/logo-full.jpg" class="image-logo"/>-->
+          <a href="/">
+          <img src="++resource++plonetheme.mondriaanhuis/website-logo.svg" class="image-logo"/>
+          </a>
         </div>
       </div>
 

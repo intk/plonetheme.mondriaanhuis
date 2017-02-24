@@ -189,9 +189,9 @@ class Renderer(base.Renderer):
         return more_text
 
     def getImageObject(self, item, style_class=""):
-        scale = "preview"
+        scale = "square"
         if 'big' in style_class:
-            scale = "mini"
+            scale = "landscape"
 
         if item.portal_type == "Image":
             return item.getURL()+"/@@images/image/%s" %(scale)
@@ -211,7 +211,7 @@ class Renderer(base.Renderer):
         return IEvent.providedBy(obj)
 
     def formatted_date(self, obj):
-        item = obj.getObject()
+        item = self.context
         provider = getMultiAdapter(
             (self.context, self.request, self),
             IContentProvider, name='formatted_date'

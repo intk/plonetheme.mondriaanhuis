@@ -162,11 +162,13 @@ jQuery(document).ready(function($){
     }
 
     jQuery(".image-logo").css("opacity", 0);
-      jQuery(".navbar-brand").css("opacity", 1);
+    jQuery(".image-logo").css("pointer-events", "none");
+    jQuery(".navbar-brand").css("opacity", 1);
 
       if (document.body.scrollTop === 0 || document.body.scrollTop < 0) {
         jQuery(".navbar-brand").css("opacity", 0);
         jQuery(".image-logo").css("opacity", 1);
+        jQuery(".image-logo").css("pointer-events", "initial");
       }
   });
 
