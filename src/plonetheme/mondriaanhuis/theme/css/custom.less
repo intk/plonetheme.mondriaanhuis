@@ -1118,9 +1118,15 @@ body.frontend, body#tinymce {
     .title-container {
         padding-top: 55px;
 
-        @media (min-width: 1200px) {
-        	padding-top: 120px;
-        }
+        
+    }
+
+    &.slideshow-empty {
+    	.title-container {
+	    	@media (min-width: 1200px) {
+	        	padding-top: 120px;
+	        }
+    	}
     }
 
     .main-content {
@@ -4286,7 +4292,7 @@ body.frontend.portaltype-folder {
     .title-container {
         @media (min-width: 768px) {
             padding-bottom: 62px;
-            padding-top: 47px;
+            padding-top: 120px;
         }
     }
 }
