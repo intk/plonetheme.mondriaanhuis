@@ -1650,7 +1650,7 @@ body.frontend, body#tinymce {
     .portletCollection {
         .title-container {
             h1 {
-                font-size: 60px;
+                font-size: 2.625em;
                 text-align: center;
                 margin-top: 25px;
                 font-weight: 400;
@@ -1684,6 +1684,7 @@ body.frontend, body#tinymce {
         h3.item-title {
             margin-top: 0px;
             margin-bottom: 0px;
+            font-size: 1.550em;
 
             clear:both;
             a {
@@ -1692,10 +1693,10 @@ body.frontend, body#tinymce {
         }
 
         p.event-date {
-            font-size: 17px;
+            font-size: 16px;
             line-height: 35px;
             color: rgba(0,0,0,0.6);
-            letter-spacing: 0.05em;
+            letter-spacing: 0.00em;
             margin-bottom: 20px;
             margin-top: 0px;
             .PlutoSansLight();
@@ -1727,14 +1728,14 @@ body.frontend, body#tinymce {
             img {
                 width: 100%;
                 padding: 0px;
-                margin-bottom: 30px;
+                margin-bottom: 35px;
             }
         }
 
         .item-description {
             margin-top: 3px;
             line-height: 30px;
-            font-size: 1.063em;
+            font-size: 1.000em;
         }
 
 
@@ -1816,7 +1817,7 @@ body.frontend, body#tinymce {
         }
 
         h1 {
-            font-size: 2.800em;
+            font-size: 2.625em;
             color: #000000;
             .PlutoSansLight();
             text-align: center;
@@ -1871,7 +1872,8 @@ body.frontend, body#tinymce {
         .portletCollection {
             .portletHeader {
                 background: none;
-                padding-bottom: 0px;
+                padding-bottom: 38px;
+                font-size: 16px;
 
                 a:hover {
                     text-decoration: none;
@@ -1949,7 +1951,7 @@ body.frontend, body#tinymce {
             text-align: left;
             padding-left: 0px;
             display: block;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.000em;
             font-weight: 400;
             margin-bottom: 5px;
         }
@@ -1979,15 +1981,15 @@ body.frontend, body#tinymce {
         }
 
         label {
-            letter-spacing: 0.1em;
+            letter-spacing: 0.00em;
             color: #000000;
-            margin-left: 4px;
+            margin-left: 0px;
             font-size: 1.08em;
             font-weight: 400;
         }
 
         label .required:after {
-            top: 4px !important;
+            top: 0px !important;
         }
 
         &:not(.template-quickedit) {
@@ -2072,8 +2074,8 @@ body.frontend, body#tinymce {
             }
 
             textarea, input[type="text"] {
-                border: 1px  solid #c3c3c3;
-                color: #848484;
+                border: 1px  solid #f0bb25;
+                color: #000000;
 
                 &::-webkit-input-placeholder {
                    color: #000000;
@@ -2099,7 +2101,7 @@ body.frontend, body#tinymce {
             }
 
             &> .field:not(.ArchetypesBooleanWidget):not(.ArchetypesCalendarWidget):not(.ArchetypesMultiSelectionWidget):not(.ArchetypesSelectionWidget) label {
-                letter-spacing: 0.1em;
+                letter-spacing: 0.00em;
                 font-size: 1.00em;
                 color: #000000;
                 text-transform: none;
@@ -2143,6 +2145,7 @@ body.frontend, body#tinymce {
     &.portaltype-formthankspage blockquote {
         padding-top: 50px;
         border-left:0px !important;
+        border-bottom: 0px !important;
     }
 
     .portlet-rrssb {
@@ -3110,10 +3113,10 @@ body.frontend.template-advancedsearch {
     }
 
     p.event-date {
-        font-size: 17px;
+        font-size: 16px;
         line-height: 35px;
         color: rgba(0,0,0,0.6);
-        letter-spacing: 0.05em;
+        letter-spacing: 0.00em;
         margin-bottom: 20px;
         margin-top: 0px;
     }
@@ -3122,7 +3125,7 @@ body.frontend.template-advancedsearch {
         margin-top: 0px;
         margin-bottom: 0px;
         line-height: 30px;
-        font-size: 1.063em;
+        font-size: 1.000em;
     }
 
     a img {
@@ -3569,10 +3572,10 @@ body.frontend.template-default_error_message {
     }
 
     p.event-date {
-        font-size: 17px;
+        font-size: 16px;
         line-height: 35px;
         color: rgba(0,0,0,0.6);
-        letter-spacing: 0.05em;
+        letter-spacing: 0.00em;
         margin-bottom: 20px;
         margin-top: 10px;
     }
@@ -4301,7 +4304,7 @@ body.frontend.portaltype-collection,
 body.frontend.portaltype-folder {
     .title-container {
         @media (min-width: 768px) {
-            padding-bottom: 62px;
+            padding-bottom: 80px;
             padding-top: 120px;
         }
     }
@@ -4432,7 +4435,7 @@ body.frontend {
 
         p.item-description {
             line-height: 30px;
-            font-size: 1.063em;
+            font-size: 1.000em;
         }
     }
 
@@ -5434,6 +5437,12 @@ body.portaltype-formfolder {
     input,
     textarea {
         width: 100% !important;
+    }
+
+    select {
+    	border: 1px solid @yellowcolor;
+    	-webkit-box-shadow: none !important;
+    	box-shadow: none !important;
     }
 
     input[type="checkbox"],

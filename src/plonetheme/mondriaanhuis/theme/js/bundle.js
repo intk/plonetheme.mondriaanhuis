@@ -40,7 +40,7 @@ jQuery(document).ready(function($){
   var body = document.body,
     timer;
 
-  window.addEventListener('scroll', function() {
+  /*window.addEventListener('scroll', function() {
     clearTimeout(timer);
     if(!body.classList.contains('disable-hover')) {
       body.classList.add('disable-hover')
@@ -49,7 +49,7 @@ jQuery(document).ready(function($){
     timer = setTimeout(function(){
       body.classList.remove('disable-hover')
     }, 250);
-  }, false);
+  }, false);*/
 
    if (jQuery("body").hasClass('template-advancedsearch')) {
       jQuery("#advanced_search_form").submit(function() {
@@ -73,7 +73,7 @@ jQuery(document).ready(function($){
     }
   });
 
-  if (jQuery("#row-items").length) {
+  if (jQuery("#row-items").length || jQuery("#content-core > div.entries").length) {
     jQuery('.tileImage').hover(function() {
       jQuery(this).parents('article.entry, .col-lg-4').find('.item-title a').addClass('hover');
     },
