@@ -593,8 +593,12 @@ body.frontend #slickcarousel iframe {
 
 body.portaltype-formfolder {
 	.intro-header {
-		height: 150px !important;
+		height: 50px !important;
 		background: white !important;
+
+		@media (max-width: 991px) {
+			height: 10px !important;
+		}
 	}
 
 	.abovecontent-portlets,

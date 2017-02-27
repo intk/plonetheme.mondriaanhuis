@@ -1117,6 +1117,10 @@ body.frontend, body#tinymce {
 
     .title-container {
         padding-top: 55px;
+
+        @media (min-width: 1200px) {
+        	padding-top: 120px;
+        }
     }
 
     .main-content {
@@ -4247,8 +4251,8 @@ body.mobile.frontend {
     input[type="button"]:not(.btn),
     input[type="password"]:not(.btn),
     .portletMailChimp .input-group input.input-lg {
-        padding: 16px;
-        padding-bottom: 15px;
+        padding: 17px;
+        padding-bottom: 17px;
     }
 }
 
@@ -6688,6 +6692,7 @@ body.section-frontpage.portaltype-portlet-page {
         	&:active,
         	&:visited {
         		color: #87a4aa;
+        		border-bottom: 1px solid #87a4aa !important;
         	}
         }
     }
@@ -6782,6 +6787,7 @@ body.section-frontpage.portaltype-portlet-page {
         	&:active,
         	&:visited {
         		color: #b7242e;
+        		border-bottom: 1px solid #b7242e !important;
         	}
         }
     }
@@ -6886,6 +6892,7 @@ body.section-frontpage.portaltype-portlet-page {
         	&:active,
         	&:visited {
         		color: #184890;
+        		border-bottom: 1px solid #184890 !important;
         	}
         }
     }
@@ -6970,6 +6977,7 @@ body.section-frontpage.portaltype-portlet-page {
         	&:active,
         	&:visited {
         		color: #A27B89;
+        		border-bottom: 1px solid #A27B89 !important;
         	}
         }
     }
@@ -6989,6 +6997,12 @@ body.section-frontpage.portaltype-portlet-page {
 	#portal-globalnav-collapse .fa.fa-angle-down {
 		display: none;
 	}
+}
+
+body:not(.portaltype-document):not(.portaltype-event) {
+	.title-wrapper {
+		display: none;
+	}	
 }
 
 body:not(.section-frontpage):not(.portaltype-collection):not(.portaltype-folder):not(.slideshow-empty) {
@@ -7058,8 +7072,6 @@ body:not(.section-frontpage):not(.portaltype-collection):not(.portaltype-folder)
 				display: none;
 			}
 		}
-
-
 	}
 }
 

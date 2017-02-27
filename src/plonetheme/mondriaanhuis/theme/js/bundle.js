@@ -165,11 +165,13 @@ jQuery(document).ready(function($){
     jQuery(".image-logo").css("pointer-events", "none");
     jQuery(".navbar-brand").css("opacity", 1);
 
-      if (document.body.scrollTop === 0 || document.body.scrollTop < 0) {
+    var bodyScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+    if (bodyScrollTop === 0 || bodyScrollTop < 0) {
         jQuery(".navbar-brand").css("opacity", 0);
         jQuery(".image-logo").css("opacity", 1);
         jQuery(".image-logo").css("pointer-events", "initial");
-      }
+    }
   });
 
   jQuery(window).on('resize', function(){
