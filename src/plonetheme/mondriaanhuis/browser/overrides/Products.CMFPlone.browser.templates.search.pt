@@ -42,6 +42,7 @@
                       navigation_root_url view/navroot_url;
                       ">
 
+        <strong id="search-term" tal:content="st"></strong>
         <input type="hidden" name="advanced_search" value="False" />
         <input type="hidden" name="sort_on" value="" />
         <input type="hidden" name="sort_order" value="" />
@@ -215,7 +216,8 @@
             </dd>
           </dl>
           
-
+        <tal:docresults
+        tal:define="st python:request.get('SearchableText', '');">
         <div>
 
           <div>
@@ -367,6 +369,7 @@
 
             </div>
         </div>
+        </tal:docresults>
 
         <div class="visualClear"><!-- --></div>
     </form>

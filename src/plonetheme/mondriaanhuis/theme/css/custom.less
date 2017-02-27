@@ -12,6 +12,8 @@
     padding: 2em 0 3em;
 }
 
+
+
 .hi-icon {
     display: inline-block;
     font-size: 0px;
@@ -3260,8 +3262,8 @@ body.frontend.template-advancedsearch {
             min-height: 300px;
 
             @media (min-width: 1140px) {
-                margin-left: -20%;
-                margin-right: 20%;
+                margin-left: 0;
+                margin-right: 0;
             }
         }
 
@@ -3534,11 +3536,19 @@ body.frontend.template-default_error_message {
     }
 
     h4.item-title {
-        margin-top: 0px;
+    	margin-top: 0px;
+
+    	@media (max-width: 768px) {
+        	margin-top: 10px;
+    	}
 
         a {
             border-bottom: 0px !important;
         }
+    }
+
+    .similar-item a {
+    	border-bottom: 0px !important;
     }
 
     a:hover {
@@ -7088,6 +7098,40 @@ body:not(.section-frontpage):not(.portaltype-collection):not(.portaltype-folder)
 		}
 	}
 }
+
+/* Search */
+body.template-search {
+	.div-advanced-search {
+		display: none;
+	}
+
+	dl.actionMenu {
+		display: none;
+	}
+
+	#searchform .input-group input.searchPage.btn {
+	  width: 150px;
+	}
+
+	@media (max-width: 1200px) {
+		.title-container {
+			padding-top: 50px !important;
+		}
+	}
+
+	#searchform > #search-term {
+		display: none;
+	}
+}
+
+.subsection-online-tickets {
+	.iframe-wrapper {
+		min-height: 1500px !important;
+	}
+}
+
+
+
 
 
 
