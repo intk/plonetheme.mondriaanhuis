@@ -6534,14 +6534,27 @@ body.section-frontpage.portaltype-portlet-page {
       margin-bottom: 0px;
       font-weight: 800;
       letter-spacing: 0.04em;
+
+      @media (max-width: 768px) {
+      	padding-left: 1px;
+      }
     }
     
     .entry-wrapper .item-title {
       color: #ffffff;
       line-height: 35px;
       text-transform: none;
-      font-size: 2.000em;
+      font-size: 1.800em;
       letter-spacing: 0.01em;
+
+      @media (max-width: 768px) {
+      	font-size: 1.700em;
+      }
+
+      @media (max-width: 480px) {
+      	font-size: 1.400em;
+      }
+
     }
     
     .entry-wrapper .item-title a {
@@ -7149,10 +7162,9 @@ body.template-search {
 	}
 }
 
-
-
-
-
+.glyphicon.link-https {
+       display: none !important;
+}
 
 
 
