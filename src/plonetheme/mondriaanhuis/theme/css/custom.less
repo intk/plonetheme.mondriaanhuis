@@ -12,8 +12,6 @@
     padding: 2em 0 3em;
 }
 
-
-
 .hi-icon {
     display: inline-block;
     font-size: 0px;
@@ -6241,7 +6239,7 @@ html.ie9 {
     padding-left: 30px;
 
     a.dropdown-toggle {
-        border-left: 1px solid #c3c3c3;
+        border-left: 0px solid #c3c3c3;
         padding-top: 22px;
         padding-left: 23px;
         padding-bottom: 17px;
@@ -7034,6 +7032,10 @@ body.section-frontpage.portaltype-portlet-page {
 @media (min-width: 1090px) {
 	#portal-globalnav-collapse .fa.fa-angle-down {
 		display: none;
+	}
+
+	#portal-globalnav-collapse #language-dropdown .fa.fa-angle-down {
+		display: inline-block !important;
 	}
 }
 

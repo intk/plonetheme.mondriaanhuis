@@ -9,7 +9,7 @@
   <nav class="plone-navbar navbar" id="portal-globalnav-wrapper">
     <div class="container-fluid"
       tal:define="language python: getattr(context, 'language', 'nl') if getattr(context, 'language', 'nl') != '' else 'nl';
-                  extra_languages python: view.extra_languages();">
+                  extra_languages python: True;">
 
       <div class="plone-navbar-header navbar-header">
         <a href="#portal-globalnav-collapse" class="nav-trigger" data-toggle="collapse" data-target="#portal-globalnav-collapse" aria-expanded="false">
@@ -51,30 +51,46 @@
                   <span class="fa fa-angle-down"></span>
                 </a>
               </tal:testlang>
-              <tal:testlang tal:condition="python: language != 'en'">
+              <tal:testlang tal:condition="python: language not in ['en', 'de']">
                 <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
                   NL
                   <span class="fa fa-angle-down"></span>
                 </a>
               </tal:testlang>
+              <tal:testlang tal:condition="python: language == 'de'">
+                <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                  DE
+                  <span class="fa fa-angle-down"></span>
+                </a>
+              </tal:testlang>
+
               <ul class="submenu dropdown-menu">
-                <li>
-                  <tal:testlang tal:condition="python: language == 'en'">
-                    <a href="#" tal:attributes="href python: '/@@multilingual-selector/'+view.getTranslationGroup()+'/nl?set_language=nl'" class="clearfix">NL</a>
-                  </tal:testlang>
-                  <tal:testlang tal:condition="python: language != 'en'">
-                    <a href="#" tal:attributes="href python: '/@@multilingual-selector/'+view.getTranslationGroup()+'/en?set_language=en'" class="clearfix">
-                      EN
-                    </a>
-                  </tal:testlang>
-                </li>
-                <tal:extra_lang tal:repeat="extra_lang extra_languages">
-                  <li class="extra-lang">
-                    <a href="#" tal:attributes="href python: extra_lang.get('url', '')" tal:content="python: extra_lang.get('id', '')" class="clearfix">
-                      DE
-                    </a>
+                <tal:en tal:condition="python: language == 'en'">
+                  <li>
+                      <a href="#" tal:attributes="href python: '/@@multilingual-selector/'+view.getTranslationGroup()+'/nl?set_language=nl'" class="clearfix">NL</a>
                   </li>
-                </tal:extra_lang>
+                  <li>
+                      <a href="#" tal:attributes="href python: '/@@multilingual-selector/'+view.getTranslationGroup()+'/de?set_language=de'" class="clearfix">DE</a>
+                  </li>
+                </tal:en>
+
+                <tal:nl tal:condition="python: language not in ['de', 'en']">
+                  <li>
+                      <a href="#" tal:attributes="href python: '/@@multilingual-selector/'+view.getTranslationGroup()+'/en?set_language=en'" class="clearfix">EN</a>
+                  </li>
+                  <li>
+                      <a href="#" tal:attributes="href python: '/@@multilingual-selector/'+view.getTranslationGroup()+'/de?set_language=de'" class="clearfix">DE</a>
+                  </li>
+                </tal:nl>
+
+                <tal:de tal:condition="python: language == 'de'">
+                  <li>
+                      <a href="#" tal:attributes="href python: '/@@multilingual-selector/'+view.getTranslationGroup()+'/nl?set_language=nl'" class="clearfix">NL</a>
+                  </li>
+                  <li>
+                      <a href="#" tal:attributes="href python: '/@@multilingual-selector/'+view.getTranslationGroup()+'/en?set_language=en'" class="clearfix">EN</a>
+                  </li>
+                </tal:de>
               </ul>
             </li>
           </ul>
