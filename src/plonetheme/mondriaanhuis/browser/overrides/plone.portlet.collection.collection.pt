@@ -52,7 +52,6 @@
         </div>
         
         <div class="entry-wrapper">
-        
             <h3 class="item-title">
               <a href="#"
                tal:attributes="href itemUrl;"

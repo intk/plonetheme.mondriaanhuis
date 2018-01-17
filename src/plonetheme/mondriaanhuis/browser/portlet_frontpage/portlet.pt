@@ -30,7 +30,13 @@
         >
 
         <div class="thumb-box-wrapper">
-        <div class="thumb-wrapper">         
+
+        <div class="hidden-wrapper top-right"></div>
+
+        <div class="clearfix"></div>
+
+        <div class="thumb-wrapper">
+          <div class="hidden-wrapper-image bottom-right"></div>      
           <a class="thumb-image" tal:condition="python: ((has_media != None and has_media != '' and 'Missing' not in str([has_media])) or item_type == 'Image')" href="" tal:attributes="href python: itemUrl+'?collection_id='+collection_id+'&b_start='+str(item_index) if collection_item != None and item_type == 'Object' else itemUrl"
             tal:define="item_img python:view.getImageObject(obj, style_class)">
 
@@ -42,11 +48,12 @@
                                "
                    src="" alt=""
                    tal:attributes="src images_src; class python:'tileImage'; alt obj/Title; title obj/Title;" /> 
-          </a> 
+          </a>
         </div>
+
         <div class="clearfix"></div>
-        <a href="" tal:attributes="href itemUrl" class="item-article-link">
           <div class="entry-wrapper">
+              <a href="" tal:attributes="href itemUrl" class="item-article-link">
               <span>
                   <h5 tal:content="view/data/header"></h5>
               </span>
@@ -56,30 +63,25 @@
                  >
                 Title
                 </span>
-            </h3>
-          </div>
-        </a>
-
-        </div>
-
-      <footer class="portletFooter"
-            tal:condition="python:showMore or view.include_empty_footer()"
+              </h3>
+              </a>
+            
+            <div class="entry-wrapper-footer"
             tal:define="showMore view/data/show_more">
-        <div class="formControls">
-          <span tal:condition="showMore">
-          <a tal:attributes="href collection_url">
-             <span class="hiddenStructure"><span tal:replace="view/data/header" /> - </span>
-             <tal:more_text tal:condition="more_text">
-              <span tal:content="more_text">More&hellip;</span> <span class="fa fa-chevron-right"></span>
-             </tal:more_text>
-             <tal:no_more_text tal:condition="not:more_text">
-              <span i18n:translate="more_url">More&hellip;</span>
-             </tal:no_more_text>
-          </a>
-          </span>
+              <span tal:condition="showMore">
+              <a tal:attributes="href collection_url">
+                 <span class="hiddenStructure"><span tal:replace="view/data/header" /> - </span>
+                 <tal:more_text tal:condition="more_text">
+                  <span tal:content="more_text">More&hellip;</span> <span class="fa fa-chevron-right"></span>
+                 </tal:more_text>
+                 <tal:no_more_text tal:condition="not:more_text">
+                  <span i18n:translate="more_url">More&hellip;</span>
+                 </tal:no_more_text>
+              </a>
+              </span>
+            </div>
+          </div>
         </div>
-      </footer>
-
     </div>
     </tal:events>
 
