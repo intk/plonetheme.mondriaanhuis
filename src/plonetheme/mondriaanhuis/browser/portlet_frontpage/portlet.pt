@@ -34,6 +34,37 @@
         <div class="hidden-wrapper top-right"></div>
 
         <div class="clearfix"></div>
+        <div class="entry-wrapper top">
+              <a href="" tal:attributes="href itemUrl" class="item-article-link">
+              <span>
+                  <h5 tal:content="view/data/header"></h5>
+              </span>
+              <h3 class="item-title">
+                <span 
+                 tal:content="obj/Title"
+                 >
+                Title
+                </span>
+              </h3>
+              </a>
+            
+            <div class="entry-wrapper-footer"
+            tal:define="showMore view/data/show_more">
+              <span tal:condition="showMore">
+              <a tal:attributes="href collection_url">
+                 <span class="hiddenStructure"><span tal:replace="view/data/header" /> - </span>
+                 <tal:more_text tal:condition="more_text">
+                  <span tal:content="more_text">More&hellip;</span> <span class="fa fa-chevron-right"></span>
+                 </tal:more_text>
+                 <tal:no_more_text tal:condition="not:more_text">
+                  <span i18n:translate="more_url">More&hellip;</span>
+                 </tal:no_more_text>
+              </a>
+              </span>
+            </div>
+          </div>
+
+        <div class="clearfix"></div>
 
         <div class="thumb-wrapper">
           <div class="hidden-wrapper-image bottom-right"></div>      
@@ -52,7 +83,7 @@
         </div>
 
         <div class="clearfix"></div>
-          <div class="entry-wrapper">
+          <div class="entry-wrapper bottom">
               <a href="" tal:attributes="href itemUrl" class="item-article-link">
               <span>
                   <h5 tal:content="view/data/header"></h5>
