@@ -170,6 +170,12 @@
         css:if-content="body.template-online_experience"
         />
 
+      <replace
+        css:theme-children="#top-portlets"
+        css:content="#column-collective-portletpage-toprow-portlet-alert-message"
+        method="raw"/>
+      <drop css:content="#column-collective-portletpage-toprow-portlet-alert-message" />
+
 
       <!-- Central column -->
       <replace css:theme="#content-container" method="raw">
